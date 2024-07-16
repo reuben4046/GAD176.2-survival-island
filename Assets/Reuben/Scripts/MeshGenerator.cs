@@ -63,9 +63,6 @@ public class MeshGenerator : MonoBehaviour
             }
             vert++;
         }
-
-
-
     }
 
 
@@ -79,15 +76,16 @@ public class MeshGenerator : MonoBehaviour
         mesh.RecalculateNormals();
     }
 
+    
+//    void OnDrawGizmos()
+//    {
+//        if (vertices == null)
+//            return;     
+//        
+//        for (int i = 0; i < vertices.Length; i++)
+//        {
+//            Gizmos.DrawSphere(vertices[i], .1f);
+//        }
+//    }
 
-    void OnDrawGizmos()
-    {
-        if (vertices == null)
-            return;     
-        
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            Gizmos.DrawSphere(vertices[i], .1f);
-        }
-    }
 }
