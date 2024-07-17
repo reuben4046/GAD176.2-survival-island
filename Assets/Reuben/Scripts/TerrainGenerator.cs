@@ -1,4 +1,5 @@
 using System.CodeDom.Compiler;
+using System.Data;
 using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
@@ -13,15 +14,10 @@ public class TerrainGenerator : MonoBehaviour
     public float offsetX = 100f;
     public float offsetY = 100f;
 
-    private float[,] fallOffMap;
-
-    // void Start ()
-    // {
-    //     offsetX = Random.Range(0f, 9999f);
-    //     offsetY = Random.Range(0f, 9999f);
-
-    //     fallOffMap = FallOffMap();
-    // }
+    void Awake()
+    {
+        
+    }
 
     void Start()
     {
@@ -32,8 +28,7 @@ public class TerrainGenerator : MonoBehaviour
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
 
-        //fallOffMap = FallOffMap();
-        // offsetX += Time.deltaTime;
+        //fallOffMap = FallOffGenerator.GenerateFallOffMap();
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
@@ -61,49 +56,12 @@ public class TerrainGenerator : MonoBehaviour
 
     float CalculateHeight (int x, int y)
     {
-        //float xCoord = (float)x / width * scale + offsetX;
-        //float yCoord = (float)y / height * scale + offsetY;
-        
-        float xv = x / (float)width * 2 - 1;
-        float yv = y / (float)height * 2 - 1;
-        float v = Mathf.Max(Mathf.Abs(xv), Mathf.Abs(yv));
+        float xCoord = (float)x / width * scale + offsetX;
+        float yCoord = (float)y / height * scale + offsetY;
 
-
-        float noiseValue = Mathf.PerlinNoise(xv , yv);
-        fallOffMap[x, y] = Mathf.Pow(v, 3f) / (Mathf.Pow(v, 3f) + Mathf.Pow(2.2f - 2.2f * v, 3f));
-
-        noiseValue -= fallOffMap[x, y];
-
-        //float noiseValue = Mathf.PerlinNoise(xCoord , yCoord);
-        // noiseValue -= FallOffMap()[y, x];
-
+        float noiseValue = Mathf.PerlinNoise(xCoord , yCoord);
 
         return noiseValue;
     }
 
-
-
-    void CalculateFallOff()
-    {
-        float xv = x / (float)width * 2 - 1;
-        float yv = y / (float)height * 2 - 1;
-        float v = Mathf.Max(Mathf.Abs(xv), Mathf.Abs(yv));
-        fallOffMap[x, y] = Mathf.Pow(v, 3f) / (Mathf.Pow(v, 3f) + Mathf.Pow(2.2f - 2.2f * v, 3f));
-    }
-
-    // float[,] FallOffMap()
-    // {
-    //     float[,] fallOffMap = new float[width, height];
-    //     for(int x = 0; x < width; x++)
-    //     {
-    //         for(int y = 0; y < height; y++)
-    //         {
-    //             float xv = x / (float)width * 2 - 1;
-    //             float yv = y / (float)height * 2 - 1;
-    //             float v = Mathf.Max(Mathf.Abs(xv), Mathf.Abs(yv));
-    //             fallOffMap[x, y] = Mathf.Pow(v, 3f) / (Mathf.Pow(v, 3f) + Mathf.Pow(2.2f - 2.2f * v, 3f));
-    //         }
-    //     }  
-    //     return fallOffMap;
-    // }
 }
