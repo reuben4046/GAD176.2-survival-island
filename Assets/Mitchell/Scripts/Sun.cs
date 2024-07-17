@@ -10,7 +10,7 @@ public class Sun : MonoBehaviour
         
     }
 
-    [SerializeField] float speed = 1.0f;
+    [SerializeField] float speed = 0.0f;
     // Update is called once per frame
     void Update()
     {
