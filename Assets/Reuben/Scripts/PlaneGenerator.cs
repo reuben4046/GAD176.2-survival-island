@@ -17,7 +17,7 @@ public class PlaneGenerator : MonoBehaviour
 
     //plane settings
     [SerializeField] Vector3 planeSize = new Vector3(1, 1, 1);
-    [SerializeField] int planeResolution = 1;
+    [SerializeField] int planeResolution = 100;
 
     //mesh values 
     List<Vector3> vertices;
@@ -39,17 +39,26 @@ public class PlaneGenerator : MonoBehaviour
         AssignMesh();
     }
 
-    void GeneratePlane(Vector2 size, int resolution)
+    float yPerStep;
+    [SerializeField] float amplitude = 1f;
+    [SerializeField] float fallOffAmmount = 1f;
+
+    [SerializeField] float sineWaveStrength = 2f;
+    void GeneratePlane(Vector3 size, int resolution)
     {
         //generate vertices
         vertices = new List<Vector3>();
         float xPerStep = size.x / resolution;
-        float yPerStep = size.y / resolution;
-        for (int y = 0; y < resolution + 1; y++)
+        float zPerStep = size.z / resolution;
+        for (int z = 0; z < resolution + 1; z++)
         {
             for (int x = 0; x < resolution + 1; x++)
             {
-                vertices.Add(new Vector3(x * xPerStep, 0, y * yPerStep));
+                float noise1 = Mathf.PerlinNoise(x * .1f, z * .1f);
+                float noise2 = Mathf.PerlinNoise(x * .01f, z * .01f);
+                float noise3 = Mathf.PerlinNoise(x * .001f, z * .001f);
+                yPerStep = (noise1 + noise2 - noise3) * amplitude;
+                vertices.Add(new Vector3(x * xPerStep, yPerStep, z * zPerStep));
 
             }
         }
@@ -74,6 +83,7 @@ public class PlaneGenerator : MonoBehaviour
             }
         }
     }
+
 
     void AssignMesh()
     {
