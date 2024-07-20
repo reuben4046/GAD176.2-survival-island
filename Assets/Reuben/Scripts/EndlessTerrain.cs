@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class EndlessTerrain : MonoBehaviour
-{
+public class EndlessTerrain : MonoBehaviour {
+
+    const float scale = 5f;
 
     const float viewerMoveThresholdForChunkUpdate = 25f;
     const float sqrViewerMoveThresholdForChunkUpdate = viewerMoveThresholdForChunkUpdate * viewerMoveThresholdForChunkUpdate;
@@ -38,7 +39,7 @@ public class EndlessTerrain : MonoBehaviour
     }
 
     void Update() {
-        viewerPosition = new Vector2(veiwer.position.x, veiwer.position.z);
+        viewerPosition = new Vector2(veiwer.position.x, veiwer.position.z) / scale;
 
         if ((veiwerPositionOld - viewerPosition).sqrMagnitude > sqrViewerMoveThresholdForChunkUpdate) {
             veiwerPositionOld = viewerPosition;
@@ -97,8 +98,9 @@ public class EndlessTerrain : MonoBehaviour
             meshFilter = meshObject.AddComponent<MeshFilter>();
             meshRenderer.material = material;
 
-            meshObject.transform.position = positionV3;
+            meshObject.transform.position = positionV3 * scale;
             meshObject.transform.parent = parent;
+            meshObject.transform.localScale = Vector3.one * scale;
             SetVisable(false);
 
             lodMeshes = new LODMesh[detailLevels.Length];
