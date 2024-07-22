@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: DefaultTexture
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  baseColors:
+  baseColours:
   - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0.24662614, b: 1, a: 0}
-  - {r: 0.9772253, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.1660657, b: 1, a: 0}
+  - {r: 1, g: 0.97048855, b: 0, a: 0}
   baseStartHeights:
   - 0
-  - 0.839
-  - 1
+  - 0.259
+  - 0.456

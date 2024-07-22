@@ -1,25 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
+using System.Collections;
 
-[CreateAssetMenu(fileName = "Reuben/UpdateableData", menuName = "Reuben/UpdateableData")]
 public class UpdateableData : ScriptableObject {
 
-    public event System.Action OnValuesUpdated;
-    public bool autoUpdate;
+	public event System.Action OnValuesUpdated;
+	public bool autoUpdate;
 
-    protected virtual void OnValidate() {
-        if (autoUpdate) {
-            UnityEditor.EditorApplication.update += NotifyOfUpdatedValues;
-        }
-    }
+	protected virtual void OnValidate() {
+		if (autoUpdate) {
+			UnityEditor.EditorApplication.update += NotifyOfUpdatedValues;
+		}
+	}
 
-    public void NotifyOfUpdatedValues() {
-        UnityEditor.EditorApplication.update -= NotifyOfUpdatedValues;
-        if (OnValuesUpdated != null) {
-            OnValuesUpdated();
-        }
-    }
+	public void NotifyOfUpdatedValues() {
+		UnityEditor.EditorApplication.update -= NotifyOfUpdatedValues;
+		if (OnValuesUpdated != null) {
+			OnValuesUpdated ();
+		}
+	}
 
 }

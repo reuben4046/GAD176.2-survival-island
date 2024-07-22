@@ -1,30 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-[CreateAssetMenu(fileName = "Reuben/TextureData", menuName = "Reuben/TextureData")]
+[CreateAssetMenu()]
 public class TextureData : UpdateableData {
 
-    public Color[] baseColors;
-    [Range(0, 1)]
-    public float[] baseStartHeights;
-    float savedMinHeight;
-    float savedMaxHeight;
+	public Color[] baseColours;
+	[Range(0,1)]
+	public float[] baseStartHeights;
 
-    public void ApplyToMaterial(Material material) {
+	float savedMinHeight;
+	float savedMaxHeight;
 
-        material.SetInt("baseColorCount", baseColors.Length);
-        material.SetColorArray("baseColors", baseColors);
-        material.SetFloatArray("baseStartHeights", baseStartHeights);
+	public void ApplyToMaterial(Material material) {
 
-        UpdateMeshHeights(material, savedMinHeight, savedMaxHeight);
-    }
+		material.SetInt ("baseColourCount", baseColours.Length);
+		material.SetColorArray ("baseColours", baseColours);
+		material.SetFloatArray ("baseStartHeights", baseStartHeights);
 
-    public void UpdateMeshHeights(Material material, float minHeight, float maxHeight) {
-        savedMaxHeight = maxHeight;
-        savedMinHeight = minHeight;
-       
-        material.SetFloat("maxHeight", maxHeight);
-        material.SetFloat("minHeight", minHeight);
-    }
+		UpdateMeshHeights (material, savedMinHeight, savedMaxHeight);
+	}
+
+	public void UpdateMeshHeights(Material material, float minHeight, float maxHeight) {
+		savedMinHeight = minHeight;
+		savedMaxHeight = maxHeight;
+
+		material.SetFloat ("minHeight", minHeight);
+		material.SetFloat ("maxHeight", maxHeight);
+	}
+
 }

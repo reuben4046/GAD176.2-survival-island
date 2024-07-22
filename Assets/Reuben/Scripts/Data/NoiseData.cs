@@ -1,31 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-[CreateAssetMenu(fileName = "NoiseData", menuName = "Reuben/NoiseData")]
+[CreateAssetMenu()]
 public class NoiseData : UpdateableData {
 
-    public Noise.NormalizeMode normalizeMode;
+	public Noise.NormalizeMode normalizeMode;
 
-    public float noiseScale;
+	public float noiseScale;
 
-    public int octaves;
-    [Range(0, 1)]
-    public float persistance;
-    public float lacunarity;
+	public int octaves;
+	[Range(0,1)]
+	public float persistance;
+	public float lacunarity;
 
-    public int seed;
-    public Vector2 offset;
+	public int seed;
+	public Vector2 offset;
 
-    protected override void OnValidate() {
-        if (lacunarity < 1) {
-        lacunarity = 1;
-        }
-        if (octaves < 0) {
-            octaves = 0;
-        }
 
-        base.OnValidate();
-    }
+	protected override void OnValidate() {
+		if (lacunarity < 1) {
+			lacunarity = 1;
+		}
+		if (octaves < 0) {
+			octaves = 0;
+		}
+
+		base.OnValidate ();
+	}
 
 }
