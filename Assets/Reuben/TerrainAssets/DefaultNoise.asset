@@ -16,7 +16,7 @@ MonoBehaviour:
   normalizeMode: 0
   noiseScale: 40
   octaves: 8
-  persistance: 0.503
-  lacunarity: 2.06
-  seed: 0
+  persistance: 0.477
+  lacunarity: 2
+  seed: 38
   offset: {x: 0, y: 0}
