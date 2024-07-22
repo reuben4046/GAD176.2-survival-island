@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Reuben/TerrainData", menuName = "Reuben/TerrainData")]
-public class TerrainData : ScriptableObject {
+public class TerrainData : UpdateableData {
     public float uniformScale = 5f;
     public bool useFalloff;
 

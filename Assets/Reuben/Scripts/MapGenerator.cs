@@ -31,6 +31,12 @@ public class MapGenerator : MonoBehaviour
         fallOffMap = FallOffGenerator.GenerateFallOffMap(mapChunkSize);
     }
 
+    void OnValuesUpdated() {
+        if (!Application.isPlaying) {
+            DrawMapInEditor();
+        }
+    }
+
     public void DrawMapInEditor() {
         MapData mapData = GenerateMapData(Vector2.zero);
 
@@ -127,9 +133,15 @@ public class MapGenerator : MonoBehaviour
         return new MapData(noiseMap, colorMap);
     }
 
-    void OnValidate()
-    {
-
+    void OnValidate() {
+        if (terrainData != null) {
+            terrainData.OnValuesUpdated -= OnValuesUpdated;
+            terrainData.OnValuesUpdated += OnValuesUpdated;
+        }
+        if (noiseData != null) {
+            noiseData.OnValuesUpdated -= OnValuesUpdated;
+            noiseData.OnValuesUpdated += OnValuesUpdated;
+        }
 
         fallOffMap = FallOffGenerator.GenerateFallOffMap(mapChunkSize);        
     }
