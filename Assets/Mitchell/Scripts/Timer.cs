@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     float secondtimer;
     int second;
-    int minute;
+    public int minute;
     [SerializeField] public float clockspeed = 1;
     public Text clocktext;
 
