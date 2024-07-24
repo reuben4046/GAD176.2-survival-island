@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockspeed: 1
+  clocktext: {fileID: 159012123}
 --- !u!1 &538063265
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +228,7 @@ GameObject:
   - component: {fileID: 538063267}
   - component: {fileID: 538063266}
   - component: {fileID: 538063268}
+  - component: {fileID: 538063271}
   - component: {fileID: 538063269}
   - component: {fileID: 538063270}
   m_Layer: 0
@@ -329,7 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1ac638dc294b04a9ca1edc22d739a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!222 &538063269
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -390,6 +391,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &538063271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538063265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56a8e91e1b989945aa51368b61f39d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clockspeed: 1
+  clocktext: {fileID: 159012123}
 --- !u!1 &787944840
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +885,7 @@ GameObject:
   - component: {fileID: 1907235306}
   - component: {fileID: 1907235305}
   - component: {fileID: 1907235307}
+  - component: {fileID: 1907235308}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -966,7 +982,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1ac638dc294b04a9ca1edc22d739a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+--- !u!114 &1907235308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907235304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56a8e91e1b989945aa51368b61f39d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clockspeed: 1
+  clocktext: {fileID: 159012123}
 --- !u!1001 &1960770199
 PrefabInstance:
   m_ObjectHideFlags: 0

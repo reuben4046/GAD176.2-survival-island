@@ -8,13 +8,13 @@ public class Timer : MonoBehaviour
     float secondtimer;
     int second;
     int minute;
-    [SerializeField] float clockspeed = 1;
-    private Text clocktext;
+    [SerializeField] public float clockspeed = 1;
+    public Text clocktext;
 
     // Start is called before the first frame update
     void Start()
     {
-        clocktext = GetComponent<Text>();
+        // clocktext = GetComponent<Text>();
     }
 
     // Update is called once per frame
