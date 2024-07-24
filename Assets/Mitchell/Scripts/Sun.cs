@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
-    private Timer clocktimer;
+    public Timer clocktimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        clocktimer = GetComponent<Timer>();
+        // clocktimer = GetComponent<Timer>();
     }
 
     // [SerializeField] float speed = 0.0f;
