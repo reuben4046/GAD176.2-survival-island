@@ -15,7 +15,7 @@ MonoBehaviour:
   autoUpdate: 1
   uniformScale: 5
   useFlatShading: 0
-  useFalloff: 0
+  useFalloff: 1
   meshHeightMultiplier: 20
   meshHeightCurve:
     serializedVersion: 2
