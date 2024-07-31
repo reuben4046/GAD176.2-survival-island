@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherName: Cloudy
-  skyBox: {fileID: 0}
+  skyBox: {fileID: 2800000, guid: 0031d1fcd35b8d542906d430543a84cd, type: 3}
 --- !u!1 &1029303310
 GameObject:
   m_ObjectHideFlags: 0
