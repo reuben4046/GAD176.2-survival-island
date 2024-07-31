@@ -29,7 +29,7 @@ public class TimeManager : MonoBehaviour
     public int Hours
     { get { return hours; } set { hours = value; OnHoursChange(value); } }
 
-    private int days;
+    [SerializeField] private int days;
 
     public int Days
     { get { return days; } set { days = value; } }
