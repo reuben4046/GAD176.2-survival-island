@@ -9,6 +9,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Texture2D skyboxSunrise;
     [SerializeField] private Texture2D skyboxDay;
     [SerializeField] private Texture2D skyboxSunset;
+    [SerializeField] private Texture2D skyboxRainy;
+    [SerializeField] private Texture2D skyboxSnowy;
 
     [SerializeField] private Gradient graddientNightToSunrise;
     [SerializeField] private Gradient graddientSunriseToDay;

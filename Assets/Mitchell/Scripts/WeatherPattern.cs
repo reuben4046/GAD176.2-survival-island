@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeatherPattern : MonoBehaviour
 {
     public string weatherName;
-    public Skybox skyBox;
+    public Texture2D skyBox;
 
     // Start is called before the first frame update
     void Start()

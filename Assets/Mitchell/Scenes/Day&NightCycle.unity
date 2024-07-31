@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherName: Raining
-  skyBox: {fileID: 0}
+  skyBox: {fileID: 2800000, guid: 0031d1fcd35b8d542906d430543a84cd, type: 3}
 --- !u!1 &509226565
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherName: Snowy
-  skyBox: {fileID: 0}
+  skyBox: {fileID: 2800000, guid: 01e0005f3ca54ff4bb9825fddf5ceefd, type: 3}
 --- !u!1 &1056550461
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +615,8 @@ MonoBehaviour:
   skyboxSunrise: {fileID: 2800000, guid: 5c35fc6347271c246b6c13ff87eda48f, type: 3}
   skyboxDay: {fileID: 2800000, guid: 1bc860af5b21fdd43a5841679978ac30, type: 3}
   skyboxSunset: {fileID: 2800000, guid: 4abe6e8840839aa47a5badfca51b3e1c, type: 3}
+  skyboxRainy: {fileID: 2800000, guid: 0031d1fcd35b8d542906d430543a84cd, type: 3}
+  skyboxSnowy: {fileID: 2800000, guid: 01e0005f3ca54ff4bb9825fddf5ceefd, type: 3}
   graddientNightToSunrise:
     serializedVersion: 2
     key0: {r: 0.24313727, g: 0.2784314, b: 0.5764706, a: 1}
