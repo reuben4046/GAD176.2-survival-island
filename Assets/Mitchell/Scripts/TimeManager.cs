@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private Light globalLight;
 
-    private int minutes;
+    [SerializeField] private int minutes;
 
     public int Minutes
     { get { return minutes; } set { minutes = value; OnMinutesChange(value); } }
