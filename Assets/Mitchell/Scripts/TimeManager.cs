@@ -24,7 +24,7 @@ public class TimeManager : MonoBehaviour
     public int Minutes
     { get { return minutes; } set { minutes = value; OnMinutesChange(value); } }
 
-    private int hours = 5;
+    [SerializeField] private int hours = 5;
 
     public int Hours
     { get { return hours; } set { hours = value; OnHoursChange(value); } }
@@ -69,7 +69,7 @@ public class TimeManager : MonoBehaviour
             StartCoroutine(LerpSkybox(skyboxNight, skyboxSunrise, 10f));
             StartCoroutine(LerpLight(graddientNightToSunrise, 10f));
         }
-        else if (value == 8)
+        else if (value == 7)
         {
             StartCoroutine(LerpSkybox(skyboxSunrise, skyboxDay, 10f));
             StartCoroutine(LerpLight(graddientSunriseToDay, 10f));
@@ -79,7 +79,7 @@ public class TimeManager : MonoBehaviour
             StartCoroutine(LerpSkybox(skyboxDay, skyboxSunset, 10f));
             StartCoroutine(LerpLight(graddientDayToSunset, 10f));
         }
-        else if (value == 22)
+        else if (value == 19)
         {
             StartCoroutine(LerpSkybox(skyboxSunset, skyboxNight, 10f));
             StartCoroutine(LerpLight(graddientSunsetToNight, 10f));

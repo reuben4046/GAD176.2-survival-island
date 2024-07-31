@@ -738,6 +738,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   globalLight: {fileID: 509226566}
+  hours: 0
 --- !u!4 &1130852332
 Transform:
   m_ObjectHideFlags: 0
