@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class DayTimer : MonoBehaviour
 {
     float secondtimer;
     public int second;
     public int minute;
+    public int day;
     [SerializeField] public float clockspeed = 1;
-    public Text clocktext;
     public Text daytext;
 
     // Start is called before the first frame update
@@ -34,12 +34,13 @@ public class Timer : MonoBehaviour
 
             if (minute == 24)
             {
+                day++;
                 minute = 0;
             }
 
             secondtimer = 0;
 
-            clocktext.text = $"{minute}:{second}";
+            daytext.text = $"Day: {day}";
         }
     }
 }
