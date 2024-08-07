@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    float secondtimer;
-
     [SerializeField] private Texture2D skyboxNight;
     [SerializeField] private Texture2D skyboxSunrise;
     [SerializeField] private Texture2D skyboxDay;
@@ -51,7 +49,6 @@ public class TimeManager : MonoBehaviour
         {
             Minutes += 1;
             tempSecond = 0;
-            secondtimer = 0;
 
             clocktext.text = $"{hours}:{minutes}";
             daytext.text = $"Day: {days}";
