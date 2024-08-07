@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     float secondtimer;
-    int second;
-    int minute;
-    [SerializeField] float clockspeed = 1;
-    private Text clocktext;
+    public int second;
+    public int minute;
+    [SerializeField] public float clockspeed = 1;
+    public Text clocktext;
+    public Text daytext;
 
     // Start is called before the first frame update
     void Start()
     {
-        clocktext = GetComponent<Text>();
+        // clocktext = GetComponent<Text>();
     }
 
     // Update is called once per frame
