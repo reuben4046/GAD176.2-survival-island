@@ -1,0 +1,16 @@
+.section {
+    background-color: var(--unity-colors-default-background);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-right: 10px;
+    margin-left: 10px;
+}

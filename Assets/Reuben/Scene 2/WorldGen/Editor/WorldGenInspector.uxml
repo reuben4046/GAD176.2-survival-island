@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/WorldGen/Editor/WorldGenEditorStyle.uss?fileID=7433441132597879392&amp;guid=1caa75aac161ac143a3895b70560c2ef&amp;type=3#WorldGenEditorStyle" />
+    <ui:EnumField label="Noise Type" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" binding-path="noiseType" name="NoiseType" style="justify-content: flex-start; align-items: auto; top: 0; transform-origin: center 70%; margin-top: 10px; margin-bottom: 5px;" />
+    <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; -unity-text-align: upper-center; margin-top: 10px; margin-bottom: 5px;" />
+    <ui:VisualElement name="Settings" class="section" style="flex-grow: 1; margin-right: 100px; margin-left: 100px; padding-bottom: 5px; padding-top: 5px; padding-right: 5px;">
+        <ui:SliderInt picking-mode="Ignore" label="Width" value="100" high-value="500" name="WidthSlider" usage-hints="None" low-value="50" show-input-field="true" binding-path="width" style="-unity-font-style: flex-start;" />
+        <ui:SliderInt picking-mode="Ignore" label="Height" value="100" high-value="500" name="HeightSlider" usage-hints="None" low-value="50" show-input-field="true" binding-path="height" style="-unity-font-style: normal; align-items: flex-start;" />
+        <ui:Slider picking-mode="Ignore" label="Scale Value" value="50" high-value="500" name="ScaleValue" low-value="10" show-input-field="true" binding-path="scaleFactor" />
+        <ui:SliderInt picking-mode="Ignore" label="Noise Modifier" value="1" high-value="5" name="NoiseMod" binding-path="noiseModifier" low-value="1" show-input-field="true" direction="Horizontal" />
+    </ui:VisualElement>
+    <ui:Foldout text="Tiles" value="true" style="margin-top: 10px;">
+        <ui:Label tabindex="-1" text="**Leave values empty for empty space**" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: italic; margin-top: 0; margin-bottom: 5px;" />
+        <ui:VisualElement name="HighValue" class="section" style="flex-grow: 1;">
+            <uie:PropertyField binding-path="highestValue" label="Highest Tile (1)" name="High" style="flex-shrink: 1; align-items: stretch; align-self: auto; -unity-font-style: bold; -unity-text-outline-width: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); margin-right: 5px; margin-left: 5px; margin-top: 5px; margin-bottom: 5px;" />
+            <ui:Slider picking-mode="Ignore" label="Size Modifier" value="1" high-value="1" focusable="true" binding-path="highestValue_size" show-input-field="true" low-value="-1" name="Slider" style="border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="High_2Value" class="section" style="flex-grow: 1;">
+            <uie:PropertyField name="High_2" binding-path="secondHighestValue" label="2nd Highest Value" style="align-self: auto; align-items: stretch; -unity-text-align: upper-left; justify-content: flex-start; -unity-font-style: bold; margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+            <ui:Slider picking-mode="Ignore" label="Size Modifier" value="0.3" high-value="1" binding-path="secondHighestValue_size" show-input-field="true" low-value="-1" style="margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Low_2Value" class="section" style="flex-grow: 1;">
+            <uie:PropertyField name="Low_2" binding-path="secondLowestValue" label="2nd Lowest Tile" style="-unity-font-style: bold; margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+            <ui:Slider picking-mode="Ignore" label="Size Modifier" value="0.2" high-value="1" binding-path="secondLowestValue_size" show-input-field="true" low-value="-1" style="margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="LowValue" class="section" style="flex-grow: 1;">
+            <uie:PropertyField name="Low" binding-path="lowestValue" label="Lowest Tile (0)" style="-unity-font-style: bold; margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+            <ui:Slider picking-mode="Ignore" label="Size Modifier" value="-0.2" high-value="1" binding-path="lowestValue_size" show-input-field="true" low-value="-1" style="margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+        </ui:VisualElement>
+    </ui:Foldout>
+    <ui:Label tabindex="-1" text="Additional Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; -unity-text-align: upper-center; margin-top: 15px; margin-bottom: 5px;" />
+    <ui:VisualElement name="Settings" class="section" style="flex-grow: 1; margin-left: 100px; margin-right: 100px; padding-top: 5px; padding-bottom: 5px; padding-right: 5px;">
+        <ui:Toggle label="Is Island" binding-path="isIsland" name="IsIsland" style="margin-top: 5px; visibility: visible; margin-right: 3px; margin-bottom: 5px; margin-left: 3px; transform-origin: center;" />
+        <ui:Slider picking-mode="Ignore" label="Island Fallout Size" value="5" high-value="10" show-input-field="true" low-value="5" binding-path="islandFalloutSize" />
+        <ui:Toggle label="Random Seed" binding-path="randomSeed" value="true" style="margin-top: 5px; margin-right: 5px; margin-bottom: 5px;" />
+        <ui:IntegerField label="Seed" value="42" readonly="false" binding-path="_seed" style="justify-content: flex-start; align-items: stretch; -unity-font-style: bold; margin-bottom: 5px; margin-top: 5px;" />
+    </ui:VisualElement>
+    <ui:Button text="Generate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Generate" style="margin-top: 10px; margin-right: 10px; margin-left: 10px; font-size: 15px; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-color: rgb(65, 65, 65); border-left-color: rgb(115, 115, 115); border-bottom-color: rgb(29, 29, 29); border-right-color: rgb(47, 47, 47);" />
+</ui:UXML>
