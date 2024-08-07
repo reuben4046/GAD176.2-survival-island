@@ -156,7 +156,7 @@ MonoBehaviour:
   - {fileID: 248303564}
   - {fileID: 534596664}
   - {fileID: 1029303312}
-  tm: {fileID: 1130852331}
+  timemanager: {fileID: 1130852331}
   weathertext: {fileID: 1180675744}
 --- !u!4 &83150191
 Transform:
@@ -727,6 +727,7 @@ MonoBehaviour:
   minutes: 0
   hours: 0
   days: 0
+  clockspeed: 1
 --- !u!4 &1130852332
 Transform:
   m_ObjectHideFlags: 0
