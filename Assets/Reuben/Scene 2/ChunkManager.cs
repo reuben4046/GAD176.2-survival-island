@@ -11,6 +11,13 @@ public class ChunkManager : MonoBehaviour
     public Vector2 worldSize;
     public int resolution = 16;
 
+
+    public float islandRadius = 900f;
+
+    [Range(0.005f, 0.015f)]
+    public float noiseScale = 0.01f;
+
+
     public Material terrainMat;
 
     public Vector2 worldCentre;
@@ -39,7 +46,7 @@ public class ChunkManager : MonoBehaviour
 
 
                 terrainGenerator.Init(current);
-                terrainGenerator.Generate(terrainMat);
+                terrainGenerator.Generate(terrainMat, noiseScale);
             }
         }
     }
@@ -65,7 +72,7 @@ class TerrainGenerator
         mesh = new Mesh();
     }
 
-    public void Generate (Material material)
+    public void Generate (Material terrainMat, float noiseScale)
     {
         Vector3 worldPos = new Vector2(filter.gameObject.transform.localPosition.x, filter.gameObject.transform.localPosition.z);
         int resolution = ChunkManager.instance.resolution;
@@ -81,8 +88,21 @@ class TerrainGenerator
             {   
                 Vector2 vertexWorldPos = new Vector2(worldPos.x + (x * 128 / resolution), worldPos.y + (z * 128 / resolution));
 
+                float islandRadius = ChunkManager.instance.islandRadius;
+                
                 float distance = Vector2.Distance(worldCentre, vertexWorldPos);
-                float y = distance;
+
+                float sin = Mathf.Sin(Mathf.Clamp(((1 + distance) / islandRadius), 0f, 1f)+ 90f);
+
+                float PerlinNoise = Mathf.PerlinNoise(vertexWorldPos.x * noiseScale, vertexWorldPos.y * noiseScale) * sin;
+
+                float islandMultiplier = sin * PerlinNoise;
+
+                islandMultiplier += Mathf.PerlinNoise(vertexWorldPos.x * .01f, vertexWorldPos.y * .01f) * 0.5f * sin;
+                islandMultiplier += Mathf.PerlinNoise(vertexWorldPos.x * .02f, vertexWorldPos.y * .02f) * 0.3f * sin;
+                islandMultiplier += Mathf.PerlinNoise(vertexWorldPos.x * .007f, vertexWorldPos.y * .007f) * 0.3f * sin;
+
+                float y = islandMultiplier * 150f;
 
                 verts[i] = new Vector3(x * (128f / resolution), y, z * (128f / resolution));
 
@@ -124,6 +144,6 @@ class TerrainGenerator
         collider.sharedMesh = mesh;
 
         filter.mesh = mesh;
-        renderer.material = material;
+        renderer.material = terrainMat;
     }
 }
