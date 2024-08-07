@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Gradient graddientSunsetToNight;
 
     [SerializeField] private Light globalLight;
+    [SerializeField] public Text clocktext;
+    [SerializeField] public Text daytext;
 
     [SerializeField] private int minutes;
 
@@ -44,6 +47,9 @@ public class TimeManager : MonoBehaviour
         {
             Minutes += 1;
             tempSecond = 0;
+
+            clocktext.text = $"{hours}:{minutes}";
+            daytext.text = $"Day: {days}";
         }
     }
 

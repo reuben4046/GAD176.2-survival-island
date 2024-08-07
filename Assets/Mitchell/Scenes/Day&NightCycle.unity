@@ -156,7 +156,7 @@ MonoBehaviour:
   - {fileID: 248303564}
   - {fileID: 534596664}
   - {fileID: 1029303312}
-  clocktimer: {fileID: 159012125}
+  tm: {fileID: 1130852331}
   weathertext: {fileID: 1180675744}
 --- !u!4 &83150191
 Transform:
@@ -187,7 +187,6 @@ GameObject:
   - component: {fileID: 159012122}
   - component: {fileID: 159012124}
   - component: {fileID: 159012123}
-  - component: {fileID: 159012125}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -256,23 +255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159012121}
   m_CullTransparentMesh: 1
---- !u!114 &159012125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159012121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f56a8e91e1b989945aa51368b61f39d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  second: 0
-  minute: 0
-  clockspeed: 1
-  clocktext: {fileID: 159012123}
-  daytext: {fileID: 0}
 --- !u!1 &248303562
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +498,6 @@ GameObject:
   - component: {fileID: 1056550462}
   - component: {fileID: 1056550464}
   - component: {fileID: 1056550463}
-  - component: {fileID: 1056550465}
   m_Layer: 5
   m_Name: Day Counter
   m_TagString: Untagged
@@ -585,23 +566,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056550461}
   m_CullTransparentMesh: 1
---- !u!114 &1056550465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056550461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ea7dc98bdd0b3468c9a4c9fdec2780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  second: 0
-  minute: 0
-  day: 0
-  clockspeed: 1
-  daytext: {fileID: 1056550463}
 --- !u!1 &1130852330
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +722,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   globalLight: {fileID: 509226566}
+  clocktext: {fileID: 159012123}
+  daytext: {fileID: 1056550463}
   minutes: 0
   hours: 0
   days: 0

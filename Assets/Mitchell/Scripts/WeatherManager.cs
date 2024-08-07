@@ -10,7 +10,7 @@ public class WeatherManager : MonoBehaviour
     private WeatherPattern currentWeather;
     private int minimumWeatherTime = 6;
     private int maximumWeatherTime = 12;
-    public Timer clocktimer;
+    public TimeManager tm;
     public Text weathertext;
 
     int randomWeatherTime;
@@ -24,7 +24,7 @@ public class WeatherManager : MonoBehaviour
 
     void Update()
     {
-        minuteCount = clocktimer.minute;
+        minuteCount = tm.Minutes;
         if (minuteCount == randomWeatherTime)
         {
             ChangeWeather();
