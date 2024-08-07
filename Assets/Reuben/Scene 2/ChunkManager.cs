@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
 using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
@@ -9,6 +11,9 @@ public class ChunkManager : MonoBehaviour
     public Vector2 worldSize;
     public int resolution = 16;
 
+    public Material terrainMat;
+
+    public Vector2 worldCentre;
 
     private void Awake()
     {
@@ -17,6 +22,7 @@ public class ChunkManager : MonoBehaviour
 
     private void Start()
     {
+        worldCentre = new Vector2((worldSize.x / 2f) * 128f, (worldSize.y / 2f) * 128f);
         GenerateChunks();
     }
 
@@ -24,10 +30,16 @@ public class ChunkManager : MonoBehaviour
     {
         for (int x = 0; x < worldSize.x; x++)
         {
-            for (int z = 0; z < worldSize.y; z++)
+            for (int y = 0; y < worldSize.y; y++)
             {
+                TerrainGenerator terrainGenerator = new TerrainGenerator();
                 GameObject current = new GameObject("Terrain " + (x * y), typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
+                current.transform.parent = transform;
+                current.transform.localPosition = new Vector3(x * 128f, 0, y * 128f);
 
+
+                terrainGenerator.Init(current);
+                terrainGenerator.Generate(terrainMat);
             }
         }
     }
@@ -35,13 +47,83 @@ public class ChunkManager : MonoBehaviour
 
 class TerrainGenerator
 {
-    public void Init ()
-    {
 
+    MeshFilter filter;
+    MeshRenderer renderer;
+    MeshCollider collider;  
+    Mesh mesh;
+
+    Vector3[] verts;
+    int[] triangles;
+    Vector2[] uvs;
+
+    public void Init (GameObject current)
+    {
+        filter = current.GetComponent<MeshFilter>();
+        renderer = current.GetComponent<MeshRenderer>();
+        collider = current.GetComponent<MeshCollider>();
+        mesh = new Mesh();
     }
 
-    public void Generate ()
+    public void Generate (Material material)
     {
+        Vector3 worldPos = new Vector2(filter.gameObject.transform.localPosition.x, filter.gameObject.transform.localPosition.z);
+        int resolution = ChunkManager.instance.resolution;
 
+        verts = new Vector3[(resolution + 1) * (resolution + 1)];
+        uvs = new Vector2[verts.Length];
+
+        Vector2 worldCentre = ChunkManager.instance.worldCentre;
+
+        for (int i = 0, x = 0; x <= resolution; x++)
+        {
+            for (int z = 0; z <= resolution; z++)
+            {   
+                Vector2 vertexWorldPos = new Vector2(worldPos.x + (x * 128 / resolution), worldPos.y + (z * 128 / resolution));
+
+                float distance = Vector2.Distance(worldCentre, vertexWorldPos);
+                float y = distance;
+
+                verts[i] = new Vector3(x * (128f / resolution), y, z * (128f / resolution));
+
+                i++;
+            }
+        }
+
+        for (int i = 0; i < uvs.Length; i++)
+        {
+            uvs[i] = new Vector2(verts[i].x + worldPos.x, verts[i].z + worldPos.y);
+        }
+
+        triangles = new int[resolution * resolution * 6];
+        int tris = 0;
+        int vert = 0;
+        for (int x = 0; x < resolution; x++)
+        {
+            for (int y = 0; y < resolution; y++)
+            {
+                triangles[tris + 0] = vert + 0;
+                triangles[tris + 1] = vert + 1;
+                triangles[tris + 2] = (int)(vert + resolution + 1);
+                triangles[tris + 3] = vert + 1;
+                triangles[tris + 4] = (int)(vert + resolution + 2);
+                triangles[tris + 5] = (int)(vert + resolution + 1);
+                
+                vert++;
+                tris += 6;
+            }
+            vert++;
+        }
+
+        mesh.Clear();
+        mesh.vertices = verts;
+        mesh.triangles = triangles;
+        mesh.uv = uvs;
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+        collider.sharedMesh = mesh;
+
+        filter.mesh = mesh;
+        renderer.material = material;
     }
 }
