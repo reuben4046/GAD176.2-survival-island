@@ -285,7 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1866347088}
+  - {fileID: 861171862}
   m_Father: {fileID: 83150191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &248303564
@@ -302,11 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherName: Raining
   skyBox: {fileID: 2800000, guid: 0031d1fcd35b8d542906d430543a84cd, type: 3}
---- !u!20 &483972980 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 1960770199}
-  m_PrefabAsset: {fileID: 0}
+  weather: {fileID: 861171861}
 --- !u!1 &509226565
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherName: Cloudy
   skyBox: {fileID: 2800000, guid: 0031d1fcd35b8d542906d430543a84cd, type: 3}
---- !u!1001 &827139837
+  weather: {fileID: 0}
+--- !u!1001 &861171860
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -455,9 +452,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 248303563}
     m_Modifications:
-    - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
+    - target: {fileID: 160098, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: m_Name
+      value: RainPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 160098, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,20 +478,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11437536, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 483972980}
+    - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19928108, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -508,6 +517,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+--- !u!1 &861171861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 160098, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+  m_PrefabInstance: {fileID: 861171860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &861171862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+  m_PrefabInstance: {fileID: 861171860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1029303310
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherName: Snowy
   skyBox: {fileID: 2800000, guid: 01e0005f3ca54ff4bb9825fddf5ceefd, type: 3}
+  weather: {fileID: 0}
 --- !u!1 &1056550461
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +970,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e388b44921811e44ea9778343ea88833, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1167,11 +1187,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1866347088 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 470886, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
-  m_PrefabInstance: {fileID: 827139837}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1960770199
 PrefabInstance:
   m_ObjectHideFlags: 0
