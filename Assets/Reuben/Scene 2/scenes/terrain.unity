@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldSize: {x: 8, y: 8}
   resolution: 16
+  islandRadius: 373.7
+  noiseScale: 0.01119
   terrainMat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   worldCentre: {x: 0, y: 0}
 --- !u!4 &587792261
