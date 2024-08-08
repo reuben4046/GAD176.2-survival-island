@@ -50,8 +50,13 @@ public class TimeManager : MonoBehaviour
             Minutes += 1;
             tempSecond = 0;
 
-            clocktext.text = $"{hours}:{minutes}";
+            clocktext.text = "0"+$"{hours}:0{minutes}";
             daytext.text = $"Day: {days}";
+
+            if (Minutes >= 10)
+            {
+                clocktext.text = "0" + $"{hours}:{minutes}";
+            }
         }
     }
 
