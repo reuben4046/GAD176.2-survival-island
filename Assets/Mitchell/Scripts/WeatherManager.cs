@@ -12,6 +12,9 @@ public class WeatherManager : MonoBehaviour
     private int maximumWeatherTime = 12;
     public TimeManager timemanager;
     public Text weathertext;
+    public ParticleSystem rain;
+    public ParticleSystem snow;
+    public ParticleSystem godRays;
 
     int randomWeatherTime;
     int minuteCount;
@@ -37,6 +40,27 @@ public class WeatherManager : MonoBehaviour
         int randomWeatherIndex = UnityEngine.Random.Range(0, weatherPatterns.Count);
         currentWeather = weatherPatterns[randomWeatherIndex];
         weathertext.text = currentWeather.weatherName;
+
+        if (currentWeather.weatherName == "Raining")
+        {
+            rain.Play();
+            snow.Stop();
+            godRays.Stop();
+        }
+
+        if (currentWeather.weatherName == "Snowy")
+        {
+            rain.Stop();
+            snow.Play();
+            godRays.Stop();
+        }
+
+        if (currentWeather.weatherName == "Cloudy")
+        {
+            rain.Stop();
+            snow.Stop();
+            godRays.Stop();
+        }
     }
 
     void ChooseNextWeatherTime()
