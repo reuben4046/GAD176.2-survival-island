@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherName: Raining
   skyBox: {fileID: 2800000, guid: 0031d1fcd35b8d542906d430543a84cd, type: 3}
-  weather: {fileID: 1409527275}
+  weather: {fileID: 1409527278}
 --- !u!1 &509226565
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherName: Snowy
   skyBox: {fileID: 2800000, guid: 01e0005f3ca54ff4bb9825fddf5ceefd, type: 3}
-  weather: {fileID: 1109155314}
+  weather: {fileID: 1109155317}
 --- !u!1 &1056550461
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,14 +576,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056550461}
   m_CullTransparentMesh: 1
---- !u!1 &1109155314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1414752433290567304, guid: c660b71f2c298b541bb665b85848d80d, type: 3}
-  m_PrefabInstance: {fileID: 7209692283303276460}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1109155315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3217267789148095989, guid: c660b71f2c298b541bb665b85848d80d, type: 3}
+  m_PrefabInstance: {fileID: 7209692283303276460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1109155317 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2734811149554588008, guid: c660b71f2c298b541bb665b85848d80d, type: 3}
   m_PrefabInstance: {fileID: 7209692283303276460}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130852330
@@ -843,14 +843,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180675742}
   m_CullTransparentMesh: 1
---- !u!1 &1409527275 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1813981767452651242, guid: b3efa8d68d7aeb94b822605600130e64, type: 3}
-  m_PrefabInstance: {fileID: 5968941321179107946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1409527276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 261288297522102542, guid: b3efa8d68d7aeb94b822605600130e64, type: 3}
+  m_PrefabInstance: {fileID: 5968941321179107946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1409527278 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 63660100178472910, guid: b3efa8d68d7aeb94b822605600130e64, type: 3}
   m_PrefabInstance: {fileID: 5968941321179107946}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1572918086

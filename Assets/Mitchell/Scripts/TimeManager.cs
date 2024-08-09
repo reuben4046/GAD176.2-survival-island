@@ -58,6 +58,11 @@ public class TimeManager : MonoBehaviour
             {
                 clocktext.text = "0" + $"{hours}:{minutes}";
             }
+
+            if (Hours >= 10)
+            {
+                clocktext.text = $"{hours}:{minutes}";
+            }
         }
     }
 

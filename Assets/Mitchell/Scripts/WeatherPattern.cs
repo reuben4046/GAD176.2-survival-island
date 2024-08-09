@@ -6,7 +6,7 @@ public class WeatherPattern : MonoBehaviour
 {
     public string weatherName;
     public Texture2D skyBox;
-    public GameObject weather;
+    public ParticleSystem weather;
 
     // Start is called before the first frame update
     void Start()
