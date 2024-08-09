@@ -1244,6 +1244,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 248303563}
     m_Modifications:
+    - target: {fileID: 63660100178472910, guid: b3efa8d68d7aeb94b822605600130e64, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 261288297522102542, guid: b3efa8d68d7aeb94b822605600130e64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1290,7 +1294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813981767452651242, guid: b3efa8d68d7aeb94b822605600130e64, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1388,6 +1392,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1414752433290567304, guid: c660b71f2c298b541bb665b85848d80d, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734811149554588008, guid: c660b71f2c298b541bb665b85848d80d, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3217267789148095989, guid: c660b71f2c298b541bb665b85848d80d, type: 3}
