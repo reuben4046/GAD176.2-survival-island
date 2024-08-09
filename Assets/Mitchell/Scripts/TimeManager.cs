@@ -9,6 +9,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Texture2D skyboxNight;
     [SerializeField] private Texture2D skyboxSunrise;
     [SerializeField] private Texture2D skyboxDay;
+    [SerializeField] private ParticleSystem godRay;
     [SerializeField] private Texture2D skyboxSunset;
     [SerializeField] private Texture2D skyboxRainy;
     [SerializeField] private Texture2D skyboxSnowy;
@@ -86,11 +87,13 @@ public class TimeManager : MonoBehaviour
         {
             StartCoroutine(LerpSkybox(skyboxSunrise, skyboxDay, 10f));
             StartCoroutine(LerpLight(graddientSunriseToDay, 10f));
+            godRay.Play();
         }
         else if (value == 18)
         {
             StartCoroutine(LerpSkybox(skyboxDay, skyboxSunset, 10f));
             StartCoroutine(LerpLight(graddientDayToSunset, 10f));
+            godRay.Stop();
         }
         else if (value == 19)
         {
