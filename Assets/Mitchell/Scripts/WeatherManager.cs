@@ -45,18 +45,21 @@ public class WeatherManager : MonoBehaviour
         {
             rain.Play();
             snow.Stop();
+            godRays.Stop();
         }
 
         if (currentWeather.weatherName == "Snowy")
         {
             rain.Stop();
             snow.Play();
+            godRays.Stop();
         }
 
         if (currentWeather.weatherName == "Cloudy")
         {
             rain.Stop();
             snow.Stop();
+            godRays.Stop();
         }
     }
 
