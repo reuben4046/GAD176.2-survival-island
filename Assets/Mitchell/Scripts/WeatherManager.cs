@@ -61,6 +61,13 @@ public class WeatherManager : MonoBehaviour
             snow.Stop();
             godRays.Stop();
         }
+
+        if (currentWeather.weatherName == "No Weather")
+        {
+            rain.Stop();
+            snow.Stop();
+            godRays.Play();
+        }
     }
 
     void ChooseNextWeatherTime()
