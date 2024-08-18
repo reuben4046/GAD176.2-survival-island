@@ -1,0 +1,132 @@
+* 5254b2c (HEAD -> main, origin/main, origin/HEAD) Updated Neutral Weather
+* e2f9816 Added Neutral Weather
+* 64d3ae4 Create ShaderGraphSettings 2.asset
+* 606bb0f Update WeatherManager.cs
+* 662387d Changed Simulation Space to World
+* d8bc0a2 Updated the 24 Hour Clock
+* de35840 Update Day&NightCycle.unity
+* 5dc39c6 Update Day&NightCycle.unity
+* 4ad0a6a Added GodRays
+* f116176 Made 24 Hour Clock look like an actual Clock
+* 93ff947 Replaced the Rain with a easy decision
+* 218c016 Made falling snow as a prefab
+* 89acc7d Added falling snow
+* a37ac4b Update Day&NightCycle.unity
+* 67191cb Readded Rain
+* e4938c1 messing around with shader not working tho
+*   c7973a1 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+|\  
+| * 8f3a0c5 Having problems with working on the rain
+| * 38abe46 Update Day&NightCycle.unity
+| * cf608ce Still working on the rain
+* | f24ddd3 added water
+|/  
+*   716b1d9 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+|\  
+| * c549a53 Removed Universal
+| * 98376a1 Added floor material to my scene
+| * 98ad721 Added Universal Texture for the rain
+| * 6f8823a Update Day&NightCycle.unity
+| *   d59b0fb Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+| |\  
+| * | b6fff28 Began Working on the Rain
+* | | 4890e36 seed and height
+| |/  
+|/|   
+* | c2a62c1 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+|\| 
+| * 3dad4d7 Added Rain but cannot be seen
+| * 3597096 Update TimeManager.cs
+* | 9749e3d perlin noise mesh generating correctly
+|/  
+* 3098151 mesh that generates in a cone
+* 6f415f0 started new method
+* b714e47 2d world gen package
+* b43253d Moved shader
+* 870ca39 Update Day&NightCycle.unity
+* f5eeb88 Update Day&NightCycle.unity
+* 75f8f3d Update WeatherManager.cs
+* e49025e Timer script Replaced
+*   9b06dd7 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+|\  
+| *   b9905e9 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+| |\  
+| * | 0f07913 Update DefaultTerrain.asset
+* | | efc121f Began replacing the Timer script with the Time Manager script
+| |/  
+|/|   
+* | a1c7a78 Finished working on the Day Counter
+* | 584ffcd Update TimeManager.cs
+* | fc04aa7 Update TimeManager.cs
+* | b9d7d72 Found the source of the Hours of the Day&Night Cycle
+* | 757a156 Update Day&NightCycle.unity
+* | 656045e Update Demo with terrain.unity
+* | c7f79e5 Update Day&NightCycle.unity
+* | 9987973 Doing some Testing on Day&Night
+* | 8f7fb0c (origin/https/github.com/reuben4046/GAD176.2-survival-island.git) Added some more skyboxes for the weather
+* | a3ee876 saved
+* | 1d0e460 Upgraded the Day & Night Cycle
+* | dbc2403 Added different Skyboxes for weather
+* | 5ea4bc1 Renamed my Scene
+* | 58687d8 Working on the Timer
+|/  
+* 5be2f17 Update MitchellScene.unity
+* f17a964 Update MitchellScene.unity
+* 0935964 added and implemented textures onto the mesh
+* 26fb37c saved
+* 8e6de62 fixed code so that the shader script is working properly
+* 246a23e started work on a shader (not working correctly)
+* d7ff7c3 removed all of the colour setting code so that it can be replaced with texture setting
+* 8e7f5c0 made it so the scriptable objects can autoupdate the terrain in the editor
+* d32da65 put all of the noise and terrain data in scriptable objects
+* 20145d7 trying to fix the normals. needs work
+*   7c671d3 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+|\  
+| * 334c000 save
+| * 22ed0cf created and implemented a fall off map
+| * 41a51ba fixed bug where some chunks were being left behind
+| * 6021092 stoped mesh chunks repeating
+| * 5535b8a made sure the mesh isnt updating every frame
+| * 8b838ed mesh generating in multiple chunks
+| * 4ef9ef4 started work on Threading
+| * 8d17544 started work on endless Terrain System
+| * 7fc1bcf saved
+| * d3bd573 created a way for the mesh to be simplifed with level of detail variable
+| * b85a220 generated a mesh with a height Multiplier Variable
+| * 45012d4 created a colour map containing different colours for different heights
+| * ef9b184 saved
+| * 70fe75d created a noise generator with (below) values
+| * 46db548 lots of messing around in PlaneGenerator.
+| * 9bc50bf PerlinTerrain
+| * fa5475f nothing
+| * adbee7a started using unity terrain
+* | a38593d Update MitchellScene.unity
+|/  
+*   4e630e5 Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+|\  
+| *   26a081d Merge branch 'main' of https://github.com/reuben4046/GAD176.2-survival-island
+| |\  
+| * | b16a938 made a procedural grid generation
+* | | 130d001 Added Timer
+| |/  
+|/|   
+* | 538aa48 Update MitchellScene.unity
+* | 571e280 Changes
+* | f4c6d2d Changing positions for the moon
+|/  
+* 3141200 Update MitchellScene.unity
+* 70d5dd0 Update MitchellScene.unity
+* 6134b73 Update MitchellScene.unity
+* a046b6b Update MitchellScene.unity
+* 99ba2ab Update MitchellScene.unity
+* c4c91ed Update MitchellScene.unity
+* 16da9e3 Update MitchellScene.unity
+* c20d50d Made a Floor for testing the Day & Night cycle
+* 6c49651 change
+* 33f4413 created a mesh that generates using perlin noise
+* 4dd652d added some sample scripts
+* 46c7f4e Update MitchellScene.unity
+* 889ec1c Update MitchellScene.unity
+* 71f7a0d Update Sun.cs
+* 5c01381 Added Day & Night Cycle working on the correct speed
+* b8f5137 transfering other project to this one
